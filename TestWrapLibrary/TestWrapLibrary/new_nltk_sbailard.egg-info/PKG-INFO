@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: new-nltk-sbailard
+Version: 0.0.1
+Summary: A small example package
+Home-page: https://github.com/pypa/sampleproject
+Author: Sophie Bailard
+Author-email: author@example.com
+License: UNKNOWN
+Description: # Example Package
+        
+        This sample Example Package includes code from nltk
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown

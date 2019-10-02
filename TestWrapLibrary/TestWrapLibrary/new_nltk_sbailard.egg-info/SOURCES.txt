@@ -1,0 +1,6 @@
+README.md
+setup.py
+new_nltk_sbailard.egg-info/PKG-INFO
+new_nltk_sbailard.egg-info/SOURCES.txt
+new_nltk_sbailard.egg-info/dependency_links.txt
+new_nltk_sbailard.egg-info/top_level.txt

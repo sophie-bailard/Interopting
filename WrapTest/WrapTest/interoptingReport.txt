@@ -1,0 +1,46 @@
+//installations
+download python (32 bit)
+install vcpckg (follow instructions on links below)
+//you will need to download git 
+- https://docs.microsoft.com/en-us/cpp/build/vcpkg?view=vs-2019
+- https://github.com/Microsoft/vcpkg
+install boost // in vcpckg using command vcpkg install boost
+install boost.python // in vcpckg using command vcpkg install boost-python
+make sure both python and c++ packages are installed in visual studio (can do so in visual studio installer--modify or in new visual studios installation)
+
+//in visual studio
+//in c++ project
+Right click prjoect and go to properties.
+
+Properties-->C/C++-->General-->Additional include directories
+Put the path to python include and the path to booth folder in Additional include libraries
+ex// "C:\Users\sophie\AppData\Local\Programs\Python\Python37-32\include";"C:\Users\sophie\Downloads\boost_1_70_0"
+
+Properties-->Linker-->General--> Additional Library Directories
+Put the path to python libs and boost libs in Additional Library Directories
+ex// "C:\Users\sophie\AppData\Local\Programs\Python\Python37-32\libs";"C:\Users\sophie\Downloads\boost_1_70_0\stage\lib"
+____________________________________________
+
+//at top of module
+#define BOOST_PYTHON_STATIC_LIB
+#include <iostream>
+#include <boost/python.hpp>
+using namespace boost::python;
+
+//import python module and use function
+Py_Initialize();
+object impMod = import("the module name");
+//if no arguments ("function name")()
+type functionOutput = extract<int>(impMod.attr("function name")(any arguments));
+
+//not required, but helpful to place above code in try-catch 
+try {	
+	Py_Initialize();
+	object impMod = import("the module name");
+	//if no arguments ("function name")()
+	type functionOutput = extract<int>(impMod.attr("function name")(any arguments));
+}
+catch (error_already_set) {
+	PyErr_Print();
+}
+

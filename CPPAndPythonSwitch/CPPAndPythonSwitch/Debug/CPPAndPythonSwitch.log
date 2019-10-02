@@ -1,0 +1,2 @@
+﻿  module.cpp
+C:\Users\sophie\source\repos\CPPAndPythonSwitch\CPPAndPythonSwitch\module.cpp(11,2): error C3861:  'PyRun_SimpleString': identifier not found
